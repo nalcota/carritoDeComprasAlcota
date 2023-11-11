@@ -1,5 +1,9 @@
 
-export const ProductCardView = ({name, description, price}) => {
+export const ProductCardView = ({id, name, description, price}) => {
+    const onAddProduct = (product) => {
+        console.log(product)
+
+    }
   return (
       <>
           <div className="card">
@@ -7,7 +11,9 @@ export const ProductCardView = ({name, description, price}) => {
                   <h5 className="card-title">{name}</h5>
                   <p className="card-text">{description}</p>
                   <p className="card-text">$ {price}</p>
-                  <button className="btn btn-primary">Agregar</button>
+                  <button className="btn btn-primary"
+                  onClick={() => onAddProduct ({id, name, description, price})}>Agregar</button>
+                  
               </div>
           </div>
       </>
