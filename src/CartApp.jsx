@@ -1,4 +1,17 @@
+import { useState, useEffect } from "react";
+import { getProducts } from "./services/productService"
+
 export const CartApp = () => {
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(
+        () => {
+            setProducts(getProducts)
+        }, [])
+
+
+
     return (
         <>
 
@@ -6,73 +19,23 @@ export const CartApp = () => {
             <div className="container">
                 <h3> Cart App</h3>
                 <div className="row">
-                    <div className="col-4 my-2">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Teclado Mecanico RGB</h5>
-                                <p className="card-text">Teclado Mecanico con Luces RGB switches red</p>
-                                <p className="card-text"> $ 1000</p>
-                                <button className="btn btn-primary">Agregar</button>
+                    {products.map(prod => (
 
+                        <div className="col-4 my-2">
+                            <div className="card">
+                                <div className="card-body">
+                                    <h5 className="card-title">{prod.name}</h5>
+                                    <p className="card-text">{prod.description}</p>
+                                    <p className="card-text"> {prod.price}</p>
+                                    <button className="btn btn-primary">Agregar</button>
+
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="col-4 my-2">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Samunsung Smar tv 55</h5>
-                                <p className="card-text">Television</p>
-                                <p className="card-text"> $ 3000</p>
-                                <button className="btn btn-primary">Agregar</button>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-4 my-2">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Audifonos bluetooh</h5>
-                                <p className="card-text">Audifonos </p>
-                                <p className="card-text"> $ 1800</p>
-                                <button className="btn btn-primary">Agregar</button>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-4 my-2">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Memoria Corsair 8gb</h5>
-                                <p className="card-text">memoria</p>
-                                <p className="card-text"> $ 1000</p>
-                                <button className="btn btn-primary">Agregar</button>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-4 my-2">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Tarjeta de video NVIDIA</h5>
-                                <p className="card-text">Tarjeta grafica para juegos 4k</p>
-                                <p className="card-text"> $ 1000</p>
-                                <button className="btn btn-primary">Agregar</button>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-4 my-2">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Mouse inalambrico</h5>
-                                <p className="card-text">Mouse</p>
-                                <p className="card-text"> $ 1000</p>
-                                <button className="btn btn-primary">Agregar</button>
-
-                            </div>
-                        </div>
-                    </div>
+                    ))}
                 </div>
+
+
 
                 <div className="my-4 w-50">
                     <h3>Carro de Compras</h3>

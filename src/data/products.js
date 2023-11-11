@@ -1,4 +1,4 @@
-export const productos = [
+export const products = [
     {
         id: 1,
         name: 'Teclado Mecanico RGB',
