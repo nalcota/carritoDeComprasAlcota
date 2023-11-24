@@ -21,7 +21,7 @@ export const CartApp = () => {
         if (hasItem) {
             setCartItems(
                 cartItems.map((i) => {
-                    if (i.product.id !== product.id) {
+                    if (i.product.id == product.id) {
                         i.quantity = i.quantity + 1;
                     }
                     return i;
@@ -59,12 +59,12 @@ export const CartApp = () => {
     return (
         <>
 
-            <div className="container">
+            <div className="container my-4">
 
                 <h3>Cart App</h3>
                 <CatalogView handler={handlerAddProductCart} />
 
-                {cartItems?.length <  0 ||
+                {cartItems?.length <=  0 ||
                     (
                         <div className="my-4 w-50">
                             <CartView items={cartItems} handlerDelete={HandlerDeleteProductCart} />
