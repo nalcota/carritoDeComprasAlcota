@@ -10,6 +10,7 @@ export const CatalogView = ({ handler }) => {
         const prods = await getProducts();
         setProducts(prods);
     }
+
     useEffect(
         () => {
             findAll();
@@ -21,7 +22,7 @@ export const CatalogView = ({ handler }) => {
                     <div className="col-4 my-2"
                         key={prod.id}>
                         <ProductCardView
-                            handler={handler}
+                            handler={ handler }
                             id={prod.id}
                             name={prod.name}
                             description={prod.description}

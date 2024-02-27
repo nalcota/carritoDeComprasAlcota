@@ -2,37 +2,37 @@ export const products = [
     {
         id: 1,
         name: 'Teclado Mecanico RGB',
-        description: 'Teclado Mecanico con Luces RGB switches red',
-        price: 1000,
+        description: 'Teclado Mecanico con luces RGB switches cherry red',
+        price: 1000
     },
     {
         id: 2,
-        name: 'Samunsung Smar tv 55',
-        description: 'Television',
-        price: 3000,
+        name: 'Samsung Smart TV 55',
+        description: 'Excelente tv LCD...',
+        price: 3000
     },
     {
         id: 3,
-        name: 'Audifonos bluetooh',
-        description: 'Audifonos',
-        price: 1800,
+        name: 'Audifono Bluetooth Sony',
+        description: 'Audifono Bluetooth para smartphone',
+        price: 770
     },
     {
         id: 4,
-        name: 'Memoria Corsair 8gb',
-        description: 'memoria',
-        price: 1000,
+        name: 'Memoria Corsair 8GB DDR5',
+        description: 'Memoria RAM optimizada para Juegos',
+        price: 3700
     },
     {
         id: 5,
-        name: 'Tarjeta de video NVIDIA',
-        description: 'Tarjeta grafica para juegos 4k',
-        price: 1000,
+        name: 'Asus Nvidia RTX',
+        description: 'Tarjeta Grafica para juegos en 4k',
+        price: 5000
     },
     {
         id: 6,
-        name: 'Mouse inalambrico',
-        description: 'Mouse',
-        price: 1000,
+        name: 'CPU Intel Core i5',
+        description: 'Optimizada para tareas multicore',
+        price: 4000
     },
 ]

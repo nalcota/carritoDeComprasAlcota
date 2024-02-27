@@ -1,20 +1,21 @@
-import { useEffect, useState } from "react"
-import { calculateTotal } from "../services/productService";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { calculateTotal } from "../services/productService";
 
-export const CartView = ({ handlerDelete,items }) => {
-
+export const CartView = ({ handlerDelete, items }) => {
 
     const [total, setTotal] = useState(0);
     const navigate = useNavigate();
+
     useEffect(() => {
         setTotal(calculateTotal(items));
-    }, [ items ])
+    }, [items]);
 
     const onDeleteProduct = (id) => {
-        //console.log('Eliminando producto')
-        handlerDelete(id)
+        // console.log('eliminado producto')
+        handlerDelete(id);
     }
+
     const onCatalog = () => {
         navigate('/catalog');
     }
@@ -38,25 +39,24 @@ export const CartView = ({ handlerDelete,items }) => {
                             <td>{item.product.price}</td>
                             <td>{item.quantity}</td>
                             <td>{item.quantity * item.product.price}</td>
-                            <td><button 
-                            className="btn btn-danger"
-                            onClick={() => onDeleteProduct(item.product.id)}>eliminar</button></td>
+                            <td><button
+                                className="btn btn-danger"
+                                onClick={() => onDeleteProduct(item.product.id)}>eliminar</button></td>
                         </tr>
 
                     ))}
-
                 </tbody>
                 <tfoot>
                     <tr>
                         <td colSpan="3" className="text-end fw-bold">Total</td>
-                        <td colSpan="2" className="text-start fw-bold">{total}</td>
+                        <td colSpan="2" className="text-start fw-bold">{ total }</td>
                     </tr>
                 </tfoot>
             </table>
             <button
-            className="btn btn-success" 
-            onClick={onCatalog}> 
-            Seguir Comprando</button>
+                className="btn btn-success"
+                onClick={onCatalog}
+            >Seguir comprando</button>
         </>
     )
 }
